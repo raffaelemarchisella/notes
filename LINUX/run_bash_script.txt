@@ -1,0 +1,4 @@
+run an bash script program=
+./[name of script]
+
+ex.: ./timer

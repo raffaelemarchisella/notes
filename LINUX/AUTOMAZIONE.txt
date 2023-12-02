@@ -1,0 +1,21 @@
+AUTOMAZIONE
+Come far sì che dopo l'avvio del sys vengano eseguite task, comandi, backup o avvii di programmi
+	"cron" process
+		un "crontab": un file con formattazione riconosciuto da cron per eseguire le linee
+		necessita di 6 valori specifici:
+			MIN	minuto al quale eseguire
+			HOUR	ora alla quale eseguire
+			DOM	giorno del mese ""
+			MON	mese dell'anno
+			DOW 	giorno della settimana
+			CMD	il comando che verrà eseguito
+
+esempio: Si vuole fare un backup dei "Documenti" di "Raffa" ogni 12 ore;
+0 *12 * * * cp -R /home/Raffa/Documenti /var/backups/
+
+Se non si vuole inserire un valore in un campo, si può usare l'asterisco.
+Altrimenti:
+	@reboot
+		per usarlo ad ogni reboot sys.
+
+

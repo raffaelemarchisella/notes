@@ -1,0 +1,12 @@
+Ci sono anche diversi standard input, provenienti dalla tastiera, per esempio, ma possiamo anche usare files, output da altri processi e il terminale stesso.
+
+
+ESEMPIO
+cat greet.txt
+Hello
+
+ok ma ora prendiamo l'input di greet.txt ('Hello') che sarà il nostro stdin per 'cat'
+e lo vogliamo reindirizzare (stdout) in hello.txt
+
+cat < greet.txt > hello.txt
+

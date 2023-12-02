@@ -1,0 +1,22 @@
+esempio: voglio listare i contenuti di una dir in un certo file
+	$ ls /home/culo/ > peanuts.txt
+
+PROBLEMA: la dir non esiste
+	ls: cannot access '/home/culo/': No such file or directory
+
+ora, utilizzando il redirector '<' o '>' il l'output file di errore dovrebbe essere
+all'interno del file peanuts.txt ma non è così
+
+per gli errori (stderr) va utilizzato il redirector ' 2> '
+REINDIRIZZARE ERRORI IN UN FILE
+In questo caso, se la directory /home/culo non esiste, l'output di errore verrà catturato e scritto nel file peanuts.txt. 
+$ ls /home/culo 2> peanuts.txt
+Se la directory esiste e non ci sono errori, l'output verrà visualizzato normalmente sulla console.
+
+Nel caso in cui vogliamo REINDIRIZZARE SIA STDOUT CHE STDERR
+' 2>&1 '
+In sostanza, il comando ls /home/culo > peanuts.txt 2>&1 permette di catturare sia l'output standard (stdout) che l'output di errore (stderr) all'interno del file peanuts.txt indipendentemente dal fatto che la directory esista o meno.
+
+per CANCELLARE OGNI OUTPUT di stderr
+posso usare 2>/dev/null 
+e i messaggi verrano reindirizzati a un file speciale che eliminerà ogni input

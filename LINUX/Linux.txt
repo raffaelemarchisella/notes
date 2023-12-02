@@ -1,0 +1,61 @@
+clear/ctrl+L per pulire il terminale
+
+
+env	print enviroment variabili ecc ad esempio
+		htb-student@nixfund:/var/mail$ env
+		USER=htb-student
+		PWD=/var/mail
+		HOME=/home/htb-student
+		SSH_CLIENT=10.10.14.13 54496 22
+		MAIL=/var/mail/htb-student
+		SHELL=/bin/bash
+
+
+ls 	-i	mostra gli indici dei file (numero inode)
+htb-student@nixfund:/etc$ ls -i sudoers
+147627 sudoers
+htb-student@nixfund:/var/backups$ ls -i shadow.bak
+265293 shadow.bak
+
+	-lt	lista in ordine cronologico dall'ultima modifica
+htb-student@nixfund:/var/backups$ ls
+alternatives.tar.0     apt.extended_states.1.gz  dpkg.diversions.0     dpkg.diversions.4.gz  dpkg.statoverride.1.gz  dpkg.statoverride.5.gz  dpkg.status.2.gz  dpkg.status.6.gz  shadow.bak
+alternatives.tar.1.gz  apt.extended_states.2.gz  dpkg.diversions.1.gz  dpkg.diversions.5.gz  
+
+htb-student@nixfund:/var/backups$ ls -lt
+total 2160
+-rw-r--r-- 1 root root    41872 Nov 12  2020 apt.extended_states.0
+-rw-r--r-- 1 root root     4437 Nov 12  2020 apt.extended_states.1.gz
+-rw-r--r-- 1 root root   742750 Nov 11  2020 dpkg.status.0
+-rw-r--r-- 1 root root   206270 Nov 11  2020 dpkg.status.1.gz
+-rw-r--r-- 1 root root   206270 Nov  5  2020 dpkg.status.2.gz
+-rw-r--r-- 1 root root   206270 Nov  5  2020 dpkg.status.3.gz
+-rw-r--r-- 1 root root   206270 Nov  5  2020 dpkg.status.4.gz
+-rw-r--r-- 1 root root   206270 Nov  5  2020 dpkg.status.5.gz
+-rw-r--r-- 1 root root   206270 Nov  5  2020 dpkg.status.6.gz
+-rw-r--r-- 1 root root    51200 Oct 29  2020 alternatives.tar.0
+
+-------------------------------------------------
+	TROVARE FILE NEL SISTEMA
+	
+find	-type		tipologia dell'oggetto ricercato 'f' sta per 'file'
+	-name		nome del file che stiamo cercando *.conf cercherà file con l'estensione .conf
+	-user		utente proprietario del file
+	-size		filtra per la grandezza del file
+	2>/dev/null	filtra fuori gli errori
+
+locate			molto simile a 'find', ma più rapido: usa un database locale contenente
+			tutte le informazioni sui file e cartelle esistenti
+	sudo updatedb		aggiornerà questo database
+ex.: locate *.conf
+			ma ha meno opzioni da usare, rispetto a 'find'
+
+ex.: What is the name of the config file that has been created after 2020-03-03 and is smaller than 28k but larger than 25k?
+htb-student@nixfund:~$ find / -type f -name *.conf -newermt 2020-03-03 -size +25k -size -28k 2>/dev/null
+/usr/share/drirc.d/00-mesa-defaults.conf
+
+which			mi da il path al comando
+htb-student@nixfund:~$ which xxd
+/usr/bin/xxd
+
+

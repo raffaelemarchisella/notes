@@ -1,0 +1,7 @@
+Come caricare un file su una macchina remota usando scp
+
+SINTASSI:
+scp [filename] [username]@[IP of remote machine ]:/[directory to upload to]
+
+ex.: scp example.txt john@192.168.100.123:/home/john/
+

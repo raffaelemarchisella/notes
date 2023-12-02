@@ -1,0 +1,5 @@
+apt list 
+
+apt list --installed 
+
+apt list | wc -l

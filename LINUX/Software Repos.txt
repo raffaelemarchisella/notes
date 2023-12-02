@@ -1,0 +1,10 @@
+Quando uno sviluppatore vuole inviare il proprio software alla community lo fa attraverso un "apt" repository. 
+Se approvato, i loro programmi e tools vengono rilasciati nel sistema.
+User accessibility e Open Source, i due punti forti di Linux.
+ls
+add-apt-repository
+
+AGGIUNGERE/RIMUOVERE UN REPO
+apt
+	il comando per scaricare software sul sys
+

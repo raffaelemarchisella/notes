@@ -1,0 +1,12 @@
+Abbiamo diversi stdout, sullo schermo per esempio, oppure in un file.
+
+>	permette di reindirizzare lo standard output;
+
+echo Hello > greet.txt
+fa sì che il messaggio venga reindirizzato all'interno di un file invece che sullo schermo 
+
+-Se il file non esiste: lo crea
+-Se il file esiste: lo sovrascrive
+
+>>	stdout va alla fine del file
+

@@ -1,0 +1,54 @@
+La chiave per comprendere il concetto di SQL è che dei "database relazionali" sono creati da sviluppatori che usano multipli database che si riferiscono uno all'altro per organizzare i dati, quindi il nome "database relazionale". In più, ogni database, contiene tabelle di records e ognuna di esse puù consistere di multiple colonne e righe in cui vengono immagazzinati i dati in un formato organizzato. 
+
+Possiamo leggere ad esempio un database mysql del workspace locale:
+
+service mysql start/stop/restart
+
+
+
+COLLEGARSI AD UN DATABASE SQL REMOTO:
+database mysql può essere hostato per accesso remoto
+
+mysql -u [username] -p -h [host.ip]
+
+
+
+APRIRE LOCALMENTE FILES DI UN DB SQL:
+per fare ciò si cambia la directiory del file mysql e si digita mysql, si verrà portati a un
+command prompt specializzato per mysql
+(non sempre è richiesta una password, ma alle volte potrebbe succedere di dover usare -p [password]
+
+mysql -u [username] -p
+
+source [filename.sql]
+
+per specificare di voler vedere il suo database
+
+
+VISUALIZZARE DATABASE:
+SHOW DATABASES
+
+
+SELEZIONARE QUALE DATABASE VISUALIZZARE:
+Possiamo scegliere quale usare attraverso il comando seguito dal nome del DB
+
+USE [db.name]
+USE employees
+
+
+
+SELEZIONARE TABS DA VISUALIZZARE NEL DB:
+dopo aver selezionato il database da visualizzare
+SHOW TABLES
+
+
+
+DESCRIVERE LA STRUTTURA DELLA SINGOLA TAB:
+
+DESCRIBE [tablename]
+
+
+
+VISUALIZZARE TUTTI I DATI ALL'INTERNO DI UNA TAB:
+SELECT * FROM [tablename]
+

@@ -1,0 +1,87 @@
+Ci sono diversi modi per visualizzare il contenuto di un file. Oltre a 'cat' ci sono dei 
+reindirizzatori (stdin, stdout, stderr), i TextEditor come VIM o nano, ma ci sono 
+anche altri comandi che ci permettono di impaginare il contenuto per leggere un file.
+===================================================================================================
+more
+	dopo aver letto il content con cat e reindirizzarlo a more, si apre immediatamente all'inizio
+	del file - l'output resta nel terminale
+
+less	possiede molte più feats di more - l'output non resta nel terminale
+
+head
+	output delle prime linee del file (10 di default)
+
+tail
+	output delle ultime linee del file (10 di default)
+
+sort
+	ordina i file (alfabeticamente di default)
+
+grep
+	output del pattern ricercato
+
+cut
+	tagliare i risultati al delimitatore specificato
+
+tr
+	sostituire caratteri
+
+column
+	output in colonne
+#
+ESEMPI0:
+nuxil@htb[/htb]$ head /etc/passwd
+
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+sync:x:4:65534:sync:/bin:/bin/sync
+games:x:5:60:games:/usr/games:/usr/sbin/nologin
+man:x:6:12:man:/var/cache/man:/usr/sbin/nologin
+lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin
+mail:x:8:8:mail:/var/mail:/usr/sbin/nologin
+news:x:9:9:news:/var/spool/news:/usr/sbin/nologin
+
+nuxil@htb[/htb]$ cat /etc/passwd | grep -v "false\|nologin" | tr ":" " " | column -t
+
+root         x  0     0      root               /root        /bin/bash
+sync         x  4     65534  sync               /bin         /bin/sync
+mrb3n        x  1000  1000   mrb3n              /home/mrb3n  /bin/bash
+cry0l1t3     x  1001  1001   /home/cry0l1t3     /bin/bash
+htb-student  x  1002  1002   /home/htb-student  /bin/bash
+#
+sed
+	editor per modificare un contenuto nell'intero file, sostituendo un testo
+	seguendo il pattern che abbiamo provvisto
+	per esempio, modificare l'output dove c'è bin con HTB
+	-s	substitute
+	-g	replace all matches
+
+nuxil@htb[/htb]$ cat /etc/passwd | grep -v "false\|nologin" | tr ":" " " | awk '{print $1, $NF}' | sed 's/bin/HTB/g'
+
+root /HTB/bash
+sync /HTB/sync
+mrb3n /HTB/bash
+cry0l1t3 /HTB/bash
+htb-student /HTB/bash
+#
+wc	wordcount
+	-l	solo linee contate
+##
+===================================================================================================
+	ESERCIZIO
+0.Collego via ssh al bersaglio, cerco file /etc/passwd/
+
+htb-student@nixfund:~$ cd /etc
+
+1.Cerco linea con username 'cry0l1t3'
+
+htb-student@nixfund:/etc$ cat passwd | grep cry0l1t3 
+cry0l1t3:x:1001:1001::/home/cry0l1t3:/bin/bash
+
+2.Cerco gli username
+
+
+
+

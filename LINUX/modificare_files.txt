@@ -1,0 +1,36 @@
+Come su Windows, su Linux si può lavorare su files e cartelle in diversi modi:
+
+-copiare
+-spostare
+-rinominare
+-creare
+-eliminare
+
+
+Ricordando che file con spazi nel nome devono essere inseriti tra le virgolette "..."
+e che i file nominati con - vanno introdotti da due -- così: cat -- -readme.txt
+Ecco alcuni comandi, quindi:
+
+-copiare: cp [filename/folder] [directory]
+	  cp ssh.conf /home/newfolder
+
+-spostare: mv [filename] [directory]
+
+-spostare più files/folders insieme: mv [file1] [file2] [file3] -t [directory]
+	mv logs.txt keys.conf script.py -t /home/savedWork
+
+-spostare tutti dalla directory corrente in un altra directory: mv * [directory]
+
+-rinominare: mv [current filename] [new]
+
+-creare nuovo file: touch [filename]
+
+-creare nuova cartella: mkdir [foldername]
+
+-output contenuti file: cat [filename]
+
+-file editor: nano [filename]
+
+
+
+
