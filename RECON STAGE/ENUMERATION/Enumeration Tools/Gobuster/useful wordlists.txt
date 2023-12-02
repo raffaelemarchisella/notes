@@ -1,0 +1,16 @@
+Lista di wordlists utili quando si usa gobuster.
+
+Kali Linux ne ha alcune installate di default.
+
+/usr/share/wordlists/dirbuster/directory-list-2.3-*.txt
+/usr/share/wordlists/dirbuster/directory-list-1.0.txt
+/usr/share/wordlists/dirb/big.txt
+/usr/share/wordlists/dirb/common.txt
+/usr/share/wordlists/dirb/small.txt
+/usr/share/wordlists/dirb/extensions_common.txt - Useful for when fuzzing for files!
+
+Oltre a queste, Daniel Miessler ha creato un repo su GitHub chiamato SecLists, compila molte liste diverse usate per altrettante diverse cose, la parte migliore è che è in apt!
+
+sudo apt install seclists
+
+e avrai l'intero repo a disposizione.

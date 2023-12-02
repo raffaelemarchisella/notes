@@ -1,0 +1,10 @@
+Nell'UDP si inviano pacchetti all'obiettivo, sperando che ce la facciano, senza attraversare la 3way-hadshake. Questo rende UDP perfetto per le connessioni che prioritizzano la velocità rispetto alla qualità. La mancanza di ACK tuttavia, rende UDP più complesso (e più leto) da scannerizzare. 
+Lo switch per nmap è -sU.
+
+Quando viene inviato un pacchetto via UDP non dovrebbe esserci una risposta. Quando ciò succede nmap si riferisce al port come open|filtered. 
+Sospetta che il port sia aperto ma potrebbe essere protetto da firewall. Se ottiene una risposta UDP (che è molto inusuale) allora il port è marcato come open, più spesso però succede che il port non risponda, quindi una richiesta viene inviata una seconda volta come double-check. Se ancora non c'è alcuna risposta, allora il port è open|filtered e nmap continua col suo compito. 
+Quando un pacchetto è inviato via un UDP port, l'obiettivo dovrebbe rispondere con un ICMP packet (ping) contentente un messaggio che il il port è irranggiugibile.
+
+Per questa difficoltà nello stabilire se un port UDP è aperto o meno, nmap invia richieste completamente vuote - raw UDP packets. Detto ciò, per ports occupati da servizi ben conosciuti, invierà un patload specifico in base al protocollo che è più probabile generare una risposta che sia la più acurata possibile.
+
+  

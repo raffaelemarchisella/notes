@@ -1,0 +1,14 @@
+Utile modalità usata per enumerare e brute-force domains/subdomains.
+
+
+Vengono usate le flag -d per il dominio e -w per la wordlist
+
+gobuster dns -d mydomain.thm -w /usr/share/wordlists/SecLists/Discovery/DNS/subdomains-top1million-5000.txt
+
+^questo comando cercherà sottodominii all'interno del dominio "mydomain.thm" usando la wordlist 
+
+FLAGS UTILI
+
+-c --show-cname mostra Records CNAME (inutilizzabile con -i)
+-i --show-ips	
+-r --resolver	usa custom DNS server

@@ -1,0 +1,20 @@
+Chiaramente, non c'è bisogno di usare per forza un tool per eseguire un'enumerazione, possiamo semplicemente usare il nostro browser o altre skills "senza fare troppo rumore".
+
+BROWSER
+I nostri browser sono piuttosto estensivi e mantengono records dei dati che ricevono e da chi li ricevono (eg: cookies) - quindi possiamo usarli per trovare una foto precisa, un file/asset utile e dove trovarli, da dove vengono caricati (un server secondario?).
+Scripts e URLs della pagina sono utili entrambi, in questo caso.
+
+CONSOLE PER SVILUPPATORI DEL BROWSER
+
+Browser moderni come Chrome e Firefox includono una suite di tools chiamati "Strumenti per Sviluppator/Console", esse includono tools come:
+-visualizzare la sorgente della pagina
+-trovare assets
+-debugging e esecuzione di javascript sul client-side (ossia il nostro browser)
+
+"F12" è una shortcut per lanciare/aprire questa suite di tools.
+
+.ISPEZIONA
+
+Possiamo vedere la sorgente del codice HTML della pagina.
+Commenti del developer, non sono renderizzati nel browser, sono verdi e riconoscibili da 
+	<!-- Comment -->

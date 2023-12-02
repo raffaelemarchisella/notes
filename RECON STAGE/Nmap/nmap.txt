@@ -1,0 +1,27 @@
+Conoscere è potere. Per questo una scan e la giusta enumerazione sono imperativi. 
+Bisogna farsi un'idea del terreno che stiamo attaccando, e farne una mappatura: 
+	-stabilire quali servizi sono in esecuzione
+	-quali porte sono aperte - esse sono i ponti della connessione
+
+Nmap ci permette di fare diversi tipi di port scan, in base a come rispondono trovare quali sono aperti, e poi possiamo enumerare i servizi in corso su ogni port. Possiede anche uno scripting engine che permette di trovare vulnerabilità via una scan e in alcuni casi persino eseguire l'exploit direttamente. 
+Un port scan è un processo attraverso il quale il client invia delle richieste e verranno sondati il server o l'host con lo scopo di stabilire quali port siano in ascolto.
+
+Su ogni computer capace di accedere alla rete sono disponibili ben 65535 port, 1024 di questi sono quelli più comuni e conosciuti.
+
+
+nmap [MACHINE_IP] [flag]
+
+	-v 	verbose mode: printa lo scan in tempo reale e da più info (-vv consigliato)
+	-sC	script base
+	-sV	versione dei servizi
+	-A	aggressive mode: versione OS, script per ulteriore enumerazione
+	-p-	per tutte le porte
+	-p-[n]	per il numero di porte
+	-p [n]	per il port specifico
+	-O	per il OS
+	-sT	TCP scan FULL TCP SCAN
+	-sS	SYN scan anche STEALTH
+	-sU	UDP scan
+	-b	FTP bounce scan su un server proxy
+	
+

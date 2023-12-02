@@ -1,0 +1,66 @@
+E' un tool usato nel pentesting per enumerazione, usato per la discovery di directory utili e non solo.
+Ha una modalità "dir" per enumerare directories e posside utili opzioni, e un'altra modalità utile è "dns" usata per enumerare domini/sottodominii.
+E' scritto in Go, un linguaggio open-source, low-level (come C o Rust).
+
+------------------------
+
+COME INSTALLARE Gobuster SU Kali Linux
+sudo apt install gobuster
+
+Done. ( . Y . )
+
+------------------------
+
+
+-ad esempio scannerizzare un website per scoprire directory nascoste
+
+-usato per brute-force su URIs (directory e files), sottodiminii DNS e nomi host virtuali
+
+------------------------
+
+COME USARE Gobuster
+
+per usarlo, si necessita di una Wordlist, usata per identificare directory pubbliche
+	molte wordlist si trovano sotto /usr/share/wordlists
+		oppure per le directory /usr/share/wordlists/dirbuster/directory-list-1.0.txt
+
+in questo caso per una directory di un sito web
+	gobuster dir
+		-u [URL]
+		-w /path/to/wordlist
+
+FLAGS UTILI
+-t --threads		numero threads(default 10; più alto maggior velocità degli scan, 64 da provare)
+-v --verbose 
+-z --no-progress	don't display progress
+-q --quiet		don't print banner and other noise
+-o --output		output file to write results to
+
+
+ESEMPIO PRATICO		
+===================================================================================================
+
+gobuster dir -u http://10.10.103.186:3333 -w /usr/share/wordlists/dirbuster/directory-list-1.0.txt
+
+===============================================================
+Gobuster v3.0.1
+by OJ Reeves (@TheColonial) & Christian Mehlmauer (@_FireFart_)
+===============================================================
+[+] Url:            http://10.10.103.186:3333
+[+] Threads:        10
+[+] Wordlist:       /usr/share/wordlists/dirbuster/directory-list-1.0.txt
+[+] Status codes:   200,204,301,302,307,401,403
+[+] User Agent:     gobuster/3.0.1
+[+] Timeout:        10s
+===============================================================
+2023/05/15 22:10:40 Starting gobuster
+===============================================================
+/images (Status: 301)
+/css (Status: 301)
+/js (Status: 301)
+/internal (Status: 301)
+===============================================================
+2023/05/15 22:10:52 Finished
+===============================================================
+
+===================================================================================================

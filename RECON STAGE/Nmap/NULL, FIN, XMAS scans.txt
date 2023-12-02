@@ -1,0 +1,30 @@
+Sono scans usate meno frequentemente.
+
+Tutte e tre sono strettamente collegate dal fatto che sono leggermente stealthy, relativamente parldando, rispetto a una SYN "stealth" scan.
+
+------------------------
+
+	NULL
+
+-sN
+
+sono richieste TCP senza alcuna flag. Per l'RFC, l'host obiettivo dovrebbe rispondere con una RST, se il port è chiuso;
+
+------------------------
+
+	FIN
+
+-sF
+
+Funzionano in un modo simile, ma, invece che mandare un pacchetto completamente vuoto, una richiesta viene inviata tramite la flag FIN - nmap si aspetterà una RST se il port è chiuso;
+
+------------------------
+
+	XMAS	
+
+-sX
+
+Invia un pacchetto malformato e si aspetta una risposta RST per i ports chiusi.
+
+========================
+

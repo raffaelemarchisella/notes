@@ -1,0 +1,7 @@
+Con "enumerazione" si intende quella fase di un pentesting (recon) in cui si vanno a enumerare e quindi ottenere una lista di directories, username, pagine nascoste, foto e documenti utili, etc...
+
+Con questo processo andiamo ad ampliare la superficie d'attacco e scoprire possibilmente nuove potenziali vulnerabilità all'interno di un'applicazione, sito, server o qualsiasi esso sia il nostro target.
+ 
+-------------------------------------------------
+
+L'enumerazione si può eseguire sia manualmente che con un tool, ad esempio Gobuster, WPScan, o Nikto

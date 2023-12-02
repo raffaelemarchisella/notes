@@ -1,0 +1,7 @@
+Modalità usata per i virtual host.
+VIRTUAL HOST: diversi websites su una stessa macchina.
+possono apparire come sub-domains ma no! I virtual host sono IP based e esegutii sullo stesso server, potrebbe sempre essere utile quindi dare un'occhiata anche qui! Soprattuto in casi in cui la classica scan sul port principale 80/443.
+
+gobuster vhost -u http://example.com -w /usr/share/wordlists/SecLists/Discovery/DNS/subdomains-top1million-5000.txt
+
+Molte flags usabili con la dir mode sono utilizzabili anche qui.

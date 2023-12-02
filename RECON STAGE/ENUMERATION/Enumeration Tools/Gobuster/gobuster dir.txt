@@ -1,0 +1,34 @@
+La modalità "dir" è una modalità di Gobuster che permette di enumerare directories di un sito, utile per performare un penetration test per poter vedere qual è la struttura delle directory di un sito web. 
+Però, Gobuster possiede l'abilità di poter visualizzare anche gli Status Code di una pagina che ci permette quindi di sapere se è accessibile/se possiamo richiederla o meno da noi "outsiders", inoltre gobuster ha una funzione aggiunta che permette di cercare files con una semplice flag.
+
+gobuster dir
+	questo non è il comando intero, ma solo la parte iniziale che dice a gobuster che vuoi usare la 		dir mode
+
+dopo questo bisogna inserire l'URL e la wordlist da usare con le opzioni -u e -w, rispettivamente quindi:
+
+gobuster dir -u http://xxx.xxx.xxx.xxx -w /path/to/wordlist/file.txt
+	nota: l'URL sarà il percorso base da dove Gobuster inizierà la sua ricerca, ossia la 
+		root web directory, è anche importante specificare il protocollo (HTTP)
+
+-------------------------------------------------
+
+FLAGS UTILI:
+
+-c --cookies	cookies da usare per la richiesta
+-x --extensions	estensioni file da cercare (.xml ; .pdf ; .conf contenenti db credetials? ; .php etc)
+-H --headers	specifica Headers HTTP, -H 'Header1:val1' -H 'Header2:val2'
+-k --no-tls-validation	skip TLS certificate verification
+-n --no-status	no status codes
+-P --password	password per autenticazione
+-s --status-codes	status codes positivi
+-b --status-codes-blacklist	status codes negativi
+-U --username	username per autenticazione 
+
+ESEMPIO DI COMANDO
+Voglio cercare la cartella "myfolder" su un webserver cercando questi tre file: .html, .js e .css
+
+gobuster dir -u http://10.10.252.123/myfolder -w /path/to/wordlist/file.txt -x.html,.js,.css
+
+La flag -k permette di skippare quella pagina di errore per quando HTTPS è abilitato e ti darebbe
+errore nel caricare una pagina/directory - easy fix!
+Funziona sia per "dir" mode che "vhost" mode.

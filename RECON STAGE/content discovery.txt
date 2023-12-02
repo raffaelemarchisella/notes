@@ -1,0 +1,15 @@
+curl
+	comando per ottenere informazioni/dati
+
+	http://SERVER_IP -v
+	   verbose mode: ci fornisce gli header della versione software del webserver e
+			il linguaggio di scripting/programmazione
+					
+				*utile per individuare versioni vulnerabili
+	
+	http://SERVER_IP/path/to/file | md5sum
+		ottengo il valore hash md5 del file
+
+===================================================================================================
+
+ 
