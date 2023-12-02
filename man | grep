@@ -1,0 +1,6 @@
+man [tool] | grep -e "[...]"
+//very useful to find something specific like a particular switch for a feature of a said tool 
+ex.: what's the switch for nmap to go faster?
+man nmap | grep -e "fast"
+-T4 (default) number threads increases speed at increase of number
+#

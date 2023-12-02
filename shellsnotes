@@ -1,0 +1,23 @@
+Filtering = common defense
+Client-side & Server-side
+#
+Client-side: commonly uses JavaScript, run on the client's browser and as such directly on your machine
+Server-side: .php - run on the Web Server, much more secure
+also runs Python or C#
+#
+-Create a PAYLOAD to bypass the filter
+#
+#
+Types of FILTERING:
+-Extension validation
+checks file extensions, blacklist/whitelist Windows uses it to determine the file type
+Unix based are a little different 
+.php .html .xml .xmls .httphp
+-File Type validation
+contents of a file, acceptable to download?
+MIME | in the header of the request <type>/<subtype> or in the case of an upload of cat.jpeg then it will be image/jpeg
+Unix systems use MAGIC NUMBERS to determine the file type instead, string of numbers in the file to determine its type, like
+a PNG file would have these bytes at the very top of the file: 89 50 4E 47 0D 0A 1A 0A
+-File lenght filtering
+-File Content filtering
+more complex it will scan the file to check if mime and magic numbers are not being spoofed
