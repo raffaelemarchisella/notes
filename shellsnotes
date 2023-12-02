@@ -1,8 +1,9 @@
-Filtering = common defense
+Filtering = common defense against shells
 Client-side & Server-side
 #
 Client-side: commonly uses JavaScript, run on the client's browser and as such directly on your machine
-Server-side: .php - run on the Web Server, much more secure
+
+Server-side: .php - run on the Web Server, much more secure, the most common
 also runs Python or C#
 #
 -Create a PAYLOAD to bypass the filter
@@ -21,3 +22,7 @@ a PNG file would have these bytes at the very top of the file: 89 50 4E 47 0D 0A
 -File lenght filtering
 -File Content filtering
 more complex it will scan the file to check if mime and magic numbers are not being spoofed
+#
+example of MIME can be also text/csv
+when uploading a csv file or text/docx 
+#
