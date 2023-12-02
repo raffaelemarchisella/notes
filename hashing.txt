@@ -1,0 +1,38 @@
+L'hashing è importantissimo per qualunque security researcher Linux.
+HASHING si riferisce a prendere un input dati, come una password, e calcolare il suo equivalente hash.
+L'EQUIVALENTE HASH è una lunga stringa che NON PUO' ESSERE RIVERSA. Per questo l'hashing è conosciuto come funzione a una via (ONE-WAY FUNCTION).
+https://www.md5hashgenerator.com/
+
+Se le aziende memorizzassero il nome utente e la password in chiaro nel database,
+sarebbe molto facile per un hacker riuscire a compromettere ogni account.
+Per questo è molto più conveniente mantenere le credenziali in valore hash che in plain text.
+------------------------
+Se immetto la mia password, di cui il database possiede l'equivalente hash, e risulta convertendola in hash equivalente, allora mi permette l'accesso.
+Nota:sia MD5 che SHA1 sono algoritmi hash deboli e si sono rivelati vulnerabili più volte ad attacchi chiamati 'hash collision attacks'. In cui questi algoritmi generano valori hash identici per parole(password) differenti. Ad oggi, SHA-256 è considerato essere generalmente più forte, ed è preferito.
+
+---------------------------------------------------------------------------------------------------
+
+Questi hash COME SI CRACCANO?
+
+Gli hash possono essere crackati con il metodo del brute-forcing. Essenzialmete significa utilizzare una wordlist e inserendo ogni potenziale password dalla wordlist nezza funzione hash per vedere se otteniamo l'equivalente output equivalente a uno dei valori memorizzati nel database. 
+
+tool per identificare un hash:
+haiti
+https://github.com/noraj/haiti
+
+ex.:
+/usr/share/wordlists/rockyou.txt
+hash.txt
+	le wordlists
+
+root@ip-10-10-133-149:~# john --format=raw-md5 --wordlist=/usr/share/wordlists/rockyou.txt hash.txt
+Using default input encoding: UTF-8
+Loaded 1 password hash (Raw-MD5 [MD5 256/256 AVX2 8x3])
+Warning: no OpenMP support for this hash type, consider --fork=2
+Press 'q' or Ctrl-C to abort, almost any other key for status
+secret123        (?)
+1g 0:00:00:00 DONE (2023-05-27 18:00) 50.00g/s 864000p/s 864000c/s 864000C/s extremo..goarmy
+Use the "--show --format=Raw-MD5" options to display all of the cracked passwords reliably
+Session completed. 
+
+f9d4049dd6a4dc35d40e5265954b2a46
